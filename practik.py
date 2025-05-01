@@ -20,7 +20,6 @@
 # print(square_sum([1,2]))
 
 
-
 # def paperwork(n, m):
 #     if n < 0 or m < 0:
 #         return 0
@@ -32,10 +31,6 @@
 # test.assert_equals(paperwork(5,-5), 0, "Failed at Paperwork(5,-5)")
 # test.assert_equals(paperwork(-5,-5), 0, "Failed at Paperwork(-5,-5)")
 # test.assert_equals(paperwork(5,0), 0, "Failed at Paperwork(5,0)")
-
-
-
-
 
 
 # def minimum(arr):
@@ -72,4 +67,377 @@
 #     print('Число дорівнює 1')
 # else:
 #     print("a <= 0")
+
+
+# num = 15 # приклад значення для num
+#
+# if num > 10:
+#     print("num більше за 10")
+# else:
+#     print("num не більше за 10")
+
+# money = 0
+# if money:
+#     print(f"You have {money} on your bank account")
+# else:
+#     print("You have no money and no debts")
+
+# result = None
+# if result:
+#     print(result)
+# else:
+#     print("Result is None, do something")
+
+# name = "Taras"
+# age = 22
+# has_driver_licence = True
+#
+# if name and age >= 18 and has_driver_licence:
+#     print(f"User {name} can rent a car")
+
+# # Задаємо конкретне число
+# num = int(input())
+#
+# # Перевіряємо кратність
+# if num % 3 == 0 and num % 5 == 0:
+#     print("FizzBuzz")
+# elif num % 3 == 0:
+#     print("Fizz")
+# elif num % 5 == 0:
+#     print("Buzz")
+# else:
+#     print(num)
+
+# if x >= 0:
+#     if y >= 0:  # x > 0, y > 0
+#         print("Перша чверть")
+#     else:  # x > 0, y < 0
+#         print("Четверта чверть")
+# else:
+#     if y >= 0:  # x < 0, y > 0
+#         print("Друга чверть")
+#     else:  # x < 0, y < 0
+#         print("Третя чверть")
+
+
+# is_nice = True
+# state = "nice" if is_nice else "not nice"
+
+# fruit = "cherry"
+#
+# match fruit:
+#     case "apple":
+#         print("This is an apple.")
+#     case "banana":
+#         print("This is a banana.")
+#     case "orange":
+#         print("This is an orange.")
+#     case "cherry":
+#         print("This is a cherry.")
+#     case _:
+#         print("Unknown fruit.")
+
+# point = (1, 0)
+#
+# match point:
+#     case (0, 0):
+#         print("Точка в центрі координат")
+#     case (0, y):
+#         print(f"Точка лежить на осі Y: y={y}")
+#     case (x, 0):
+#         print(f"Точка лежить на осі X: x={x}")
+#     case (x, y):
+#         print(f"Точка має координати:  x={x}, y={y}")
+#     case _:
+#         print("Це не точка")
+
+
+# pets = ["dog", "fish", "cat"]
+#
+# match pets:
+#     case ["dog", "cat", _]:
+#         # Випадок, коли є і собака, і кіт
+#         print("There's a dog and a cat.")
+#     case ["dog", _, _]:
+#         # Випадок, коли є тільки собака
+#         print("There's a dog.")
+#     case _:
+#         # Випадок для інших комбінацій
+#         print("No dogs.")
+
+
+# fruit = 'apple'
+# for char in fruit:
+#     print(char)
+
+
+# car = "Volvo", "BMW", "Audi"
+# for brand in car:
+#     print(brand)
+
+# alphabet = "abcdefghijklmnopqrstuvwxyz"
+# for char in alphabet:
+#     print(char, end=" ")
+
+# some_iterable = ["a", "b", "c"]
+#
+# for i in some_iterable:
+#     print(i)
+
+# odd_numbers = [1, 3, 5, 7, 9]
+# for i in odd_numbers:
+#     print(i ** 2)
+
+# # Зчитування рядка від користувача
+# user_input = input("Введіть рядок: ")
+#
+# # Ініціалізація змінних для підрахунку символів та пробілів
+# total_chars = len(user_input)  # загальна кількість символів у рядку
+# space_count = 0  # кількість пробілів
+#
+# # Підрахунок кількості пробілів
+# for char in user_input:
+#     if char == " ":
+#         space_count += 1
+#
+# # Виведення результатів
+# print(f"Загальна кількість символів у рядку: {total_chars}")
+# print(f"Кількість пробілів у рядку: {space_count}")
+
+# k = 0
+# while k < 10:
+#     k = k + 1
+#     print(k)
+
+# num = 0
+# while num < 10:
+#     num = num + 1
+#     if num % 2 == 0:
+#         continue
+#     print(num)
+
+# a = 0
+# while True:
+#     print(a)
+#     if a >= 5:
+#         break
+#     a = a + 1
+
+# a = 0
+# while a < 6:
+#     a = a + 1
+#     if not a % 2:
+#         continue
+#     print(a)
+
+
+# for i in range(1, 10):
+#     if i % 2 == 0:
+#         print(f"{i} є парним числом.")
+#     else:
+#         print(f"{i} є непарним числом.")
+
+
+# for i in range(5):
+#     print(i)
+
+# for i in range(2, 10):
+#     print(i)
+
+# for i in range(0, 10, 2):
+#     print(i)
+
+
+# some_list = ["apple", "banana", "cherry"]
+# for index, value in enumerate(some_list):
+#     print(index, value)
+
+# list1 = ["зелене", "стигла", "червоний"]
+# list2 = ["яблуко", "вишня", "томат"]
+# for number, letter in zip(list1, list2):
+#     print(number, letter)
+
+# list1 = [1, 2, 3]
+# list2 = ['a', 'b', 'c', 'd', 'e']
+#
+# for number, letter in zip(list1, list2):
+#     print(number, letter)
+
+# numbers = {
+#     1: "one",
+#     2: "two",
+#     3: "three"
+# }
+#
+# for key in numbers:
+#     print(key)
+
+# def say_hello():
+#     print("Hello!")
+
+# def print_max(a, b):
+#     if a > b:
+#         print(a, 'максимально')
+#     elif a == b:
+#         print(a, 'дорівнює', b)
+#     else:
+#         print(b, 'максимально')
+#
+# print_max(3, 4)  # пряма передача значень
+#
+# x = 5
+# y = 7
+# print_max(x, y)  # передача змінних як аргументів
+
+
+# def print_max(a: int, b: int):
+#     if a > b:
+#         print(a, 'максимально')
+#     elif a == b:
+#         print(a, 'дорівнює', b)
+#     else:
+#         print(b, 'максимально')
+#
+# print_max(3, 4)  # пряма передача значень
+#
+# x = 5
+# y = 7
+# print_max(x, y)  # передача змінних як аргументів
+
+# def my_function() -> ReturnType:
+#     return result
+
+## Виведення числа
+# def add_numbers(num1: int, num2: int) -> int:
+#     sum = num1 + num2
+#     return sum
+# result = add_numbers(5, 10)
+# print(result)
+
+## Виведення строки
+# def greet(name: str) -> str:
+#     return f"Hello {name}!"
+# greeting = greet("John")
+# print(greeting)
+
+## Функція, що повертає булеве значення:
+# def  is_even(num: int) -> bool:
+#     return num % 2 == 0
+# check_even = is_even(4)
+# print(check_even)
+
+## Принципи змінності об'єктів у Python
+# def modify_string(original: str) -> str:
+#     original = "changed"
+#     return original
+# str_var = "original"
+# print(modify_string(str_var))
+# print(str_var)
+
+## Змінні типи, як списки list
+# def modify_list(lst: list) -> None:
+#     lst.append(4)
+#
+# my_lsit = [1, 2, 3]
+# modify_list(my_lsit)
+# print(my_lsit)
+
+## Використовуйте метод copy() для створення копій змінних об'єктів, якщо не хочете змінювати оригінал.
+## Тут список my_list після виконання функції modify_list вже не зазнає змін.
+# def modify_list(lst: list) -> None:
+#     lst = lst.copy()
+#     lst.append(4)
+#
+# my_lsit = [1, 2, 3]
+# modify_list(my_lsit)
+# print(my_lsit)
+
+## конвертувати кожен символ у рядку в його відповідний код ASCII.
+# def string_to_ascii(string: str) -> dict:
+#     ascii_dict = {"A": 65, "B": 66, "C": 67}
+#     for char in string:
+#         if char not in ascii_dict:
+#             ascii_dict[char] = ord(char)
+#     return ascii_dict
+
+## Після виклику функції string_to_codes із рядком "Hello world!"
+# def string_to_codes(string: str) -> dict:
+#     result = string_to_codes("Hello world!")
+#     return result
+
+
+## змінна, оголошена всередині функції
+# x = 50
+# def func() -> None:
+#     x = 2
+#     print('var local x on', x)
+#
+# func()
+# print('Global x and earlier', x)
+
+## функція визначена всередині іншої функції
+# def outer_func():
+#     enclosing_var = "Я змінна в функції, що охоплює"
+#
+#     def inner_func():
+#         print("Всередині вкладеної функції:", enclosing_var)
+#
+#     inner_func()
+# outer_func()
+
+## Для того, щоб розібратися як змінювати змінні в функції, що охоплює внутрішню функцію, розглянемо приклад:
+# def func_outher():
+#     x = 2
+#
+#     def func_inner():
+#         nonlocal x
+#         x = 5
+#
+#     func_inner()
+#     return x
+# result = func_outher()
+
+## щоб змінити глобальну змінну всередині функції, необхідно використовувати ключове слово global.
+# x = 50
+#
+# def func():
+#     global x
+#     print('numbers дорівнює', x)
+#     x = 2
+#     print('Змінюємо глобальне значення numbers на')
+#
+# func()
+# print('Значення numbers складає', x)
+
+## Визначимо функцію з ключовими аргументами
+# def greet(name, message="Hello"):
+#     print(f"{message}, {name}!")
+
+## приклад для демонстрації гнучкості ключових аргументів, та можливості змінювати порядок аргументів або використовувати значення за замовчуванням.
+# def func(a, b=5, c=10):
+#     print('a дорівнює', a,', b дорівнює', b,', а c дорівнює', c)
+# func(3, 7)
+# func(25, c = 24)
+# func(c = 50, a = 100)
+
+## виведення на екран рядка, вказаного число разів.
+# def say(message, time=1):
+#     print(message * time)
+# say("Hello")
+# say("World", 5)
+
+## Нам необхідно створити функцію для розрахунку вартості товарів з урахуванням можливої знижки.
+# def real_cost(base: int, discount: float = 0) -> float:
+#     return base * (1 - discount)
+# price_bread = 15
+# price_butter = 50
+# price_sugar = 60
+#
+# current_price_bread = real_cost(price_bread)
+# current_price_butter = real_cost(price_butter, 0.05)
+# current_price_sugar = real_cost(price_sugar, 0.07)
+#
+# print(f"new price: {current_price_bread}")
+# print(f"new price: {current_price_butter}")
+# print(f"new price: {current_price_sugar}")
 
