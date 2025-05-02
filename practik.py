@@ -7,7 +7,9 @@
 #     # Процентная
 #     # разница = | (a - b) / [(a + b) / 2] |
 #     # *100 %
+from typing import List
 
+from PIL.EpsImagePlugin import has_ghostscript
 
 # def square_sum(numbers):
 #     return sum(x*x for x in numbers)
@@ -441,3 +443,105 @@
 # print(f"new price: {current_price_butter}")
 # print(f"new price: {current_price_sugar}")
 
+## робота з винятками
+# while True:
+#     age = input("How old are you? ")
+#     try:
+#         age = int(age)
+#         if age >= 18:
+#             print("Access allowed!")
+#             break
+#         else:
+#             print("Access denied!")
+#             break
+#     except ValueError:
+#         print(f"{age} is not a number, please write a number!")
+#     finally:
+#         print("_" * 100)
+
+## Приклад використання параметру *args
+# def printy_all_args(*args):
+#     for arg in args:
+#         print(arg)
+# printy_all_args(1, "Hello", True)
+
+# def concatenate(*args):
+#     result = ""
+#     for arg in args:
+#         result += arg
+#     return result
+#
+# print(concatenate("Hello", " ", "world", "!"))
+
+# def concatenate(*strings):
+#     result = ""
+#     for string in strings:
+#         result += string
+#     return result
+# print(concatenate("Hello", " ", "world", "!"))
+
+## Приклад використання параметру **kwargs
+# def greet(**kwargs):
+#     for key, value in kwargs.items():
+#         print(f"{key}: {value}")
+# greet(name="Alice", age=25)
+
+# def example_function(*args, **kwargs):
+#     print("Позиційні аргументи:", args)
+#     print("Ключові аргументи:", kwargs)
+# example_function(1, 2, 3, name="Alice", age=25)
+
+## Розпакування списку дозволяє присвоїти елементи списку окремим змінним.
+# my_list = [1, 2, 3]
+# a, b, c = my_list
+# print(a, b, c)
+
+# def greet(name, age):
+#     print(f"Hello {name}, you are {age} years old.")
+#
+# person_info = {"name": "Alice", "age": 25}
+# greet(**person_info)
+
+## Запоковка списку
+# a = 1
+# b = 2
+# c = 3
+# packed = [a, b, c]
+# print(packed)
+
+## Формула обчислення факторіала
+# def factorial(n):
+#     if n == 0:
+#         return 1
+#     else:
+#         return n * factorial(n - 1)
+# print(factorial(5))
+
+## Формула обчислення фібоначчі
+# def fibonacci(n):
+#     if n == 0:
+#         return 0
+#     elif n == 1:
+#         return 1
+#     else:
+#         return fibonacci(n - 1) + fibonacci(n - 2)
+# print(fibonacci(10))
+
+# def fibonacci(n):
+#     if n <= 1:
+#         return  n
+#     else:
+#         return fibonacci(n - 1) + fibonacci(n - 2)
+# print(fibonacci(10))
+
+## як працює стек викликів у рекурсії на прикладі функції для обчислення факторіала числа:
+# def factorial(n):
+#     print("Виклик функції factorial з n = ", n)
+#     if n == 1:
+#         print("Базовий віпадок, n = 1, повернення 1")
+#         return 1
+#     else:
+#         result = n * factorial( n - 1)
+#         print("Повернення результату для n = ", n, ": ", result)
+#         return result
+# print(factorial(5))
