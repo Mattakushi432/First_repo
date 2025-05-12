@@ -174,4 +174,3 @@ datetime передує, наступає або є точно таким сам
 #
 # days_since = current_date.toordinal() - napoleon_burns.toordinal()
 # print(days_since)
-
