@@ -174,3 +174,199 @@ datetime передує, наступає або є точно таким сам
 #
 # days_since = current_date.toordinal() - napoleon_burns.toordinal()
 # print(days_since)
+
+
+"""
+Перетворення об'єкту datetime в timestamp і навпаки
+"""
+# from datetime import datetime
+#
+# now = datetime.now()
+# timestamp = datetime.timestamp(now)
+# print(timestamp)
+
+"""
+Конвертація timestamp в об'єкт datetime
+"""
+# from datetime import datetime
+#
+# timestamp = 1677721600
+#
+# dt_object = datetime.fromtimestamp(timestamp)
+# print(dt_object)
+
+"""
+Форматування дати та часу завдяки методу strftime
+"""
+# from datetime import datetime
+#
+# now = datetime.now()
+#
+# formatted_date = now.strftime("%Y-%m-%d %H:%M:%S")
+# print(formatted_date)
+#
+# formatted_date_only = now.strftime("%A, %d %B %Y")
+# print(formatted_date_only)
+#
+# formatted_date_only = now.strftime("%a, %d %B %Y")
+# print(formatted_date_only)
+#
+# formatted_time_only = now.strftime("%I:%M %p")
+# print(formatted_time_only)
+#
+# formatted_date_only = now.strftime("%d.%m.%Y")
+# print(formatted_date_only)
+
+"""
+Перетворення раядків у об'єкти datetime за допомогою функції strptime
+"""
+# from datetime import datetime
+#
+# # Припустимо, у нас є дата у вигляді рядка
+# date_string = "2023.03.14"
+#
+# # Перетворення рядка в об'єкт datetime
+# datetime_object = datetime.strptime(date_string, "%Y.%m.%d")
+# print(datetime_object)
+
+"""
+Робота з ISO форматом дати isoformat()
+"""
+# from datetime import datetime
+#
+# now = datetime.now()
+#
+# iso_format = now.isoformat()
+# print(iso_format)
+
+"""
+можна використати метод fromisoformat():
+"""
+# from datetime import datetime
+#
+# iso_date_string = "2025-05-12T19:28:01.859694"
+#
+# date_from_iso = datetime.fromisoformat(iso_date_string)
+# print(date_from_iso)
+
+"""
+Метод isoweekday() у об'єкті datetime використовується для отримання дня тижня відповідно до ISO 8601.
+"""
+# from datetime import datetime
+#
+# now = datetime.now()
+# day_week = now.isoweekday()
+# print(f"Сьогодні: {day_week}")
+
+"""
+розглянемо корисний метод isocalendar(), який використовується для отримання кортежу
+"""
+# from datetime import datetime
+#
+# now = datetime.now()
+#
+# calendar = now.isocalendar()
+# print(f"ISO year: {calendar[0]}, ISO week: {calendar[1]}, ISO day: {calendar[2]}")
+
+"""
+Щоб вивести дату у форматі UTC це можна зробити, 
+    додавши інформацію про часову зону до об'єкта datetime:
+"""
+# from datetime import datetime, timezone
+#
+# local_now = datetime.now()
+# utc_now = datetime.now(timezone.utc)
+#
+# print(f"Local time: {local_now}")
+# print(f"UTC time: {utc_now}")
+
+"""
+Щоб перетворити час з UTC в іншу часову зону 
+Східному часовому поясу США (UTC-5 годин), можна зробити наступне:
+"""
+# from datetime import datetime, timezone, timedelta
+#
+# utc_time = datetime.now(timezone.utc)
+#
+# eastern_time = utc_time.astimezone(timezone(timedelta(hours=-5)))
+# print(eastern_time)
+
+"""
+Щоб перетворити локальний час у час UTC спочатку потрібно призначити
+локальному часу відповідну часову зону, 
+а потім використати метод astimezone():
+"""
+# from datetime import datetime, timezone, timedelta
+#
+# local_timezone = timezone(timedelta(hours=2))
+# local_time = datetime(year=2025, month=5, day=12, hour=20, minute=6, second=30, tzinfo=local_timezone)
+#
+# utc_time = local_time.astimezone(timezone.utc)
+# print(utc_time)
+
+"""
+Стандарт ISO 8601 також підтримує часові зони. У Python це можна зробити, додавши інформацію про часову зону до об'єкта datetime:
+"""
+
+# from datetime import datetime, timezone, timedelta
+#
+# timezone_offset = timezone(timedelta(hours=2))
+# timezone_datetime = datetime(year=2025, month=5, day=12, hour=20, minute=6, second=30, tzinfo=timezone_offset)
+#
+# iso_format_with_timezone = timezone_datetime.isoformat()
+# print(iso_format_with_timezone)
+
+"""
+Метод time.time() повертає поточний час у секундах з 1 січня 1970 року (epoch time).
+"""
+# import time
+#
+# current_time = time.time()
+# print(f"Текущий час: {current_time}")
+
+"""
+Метод time.sleep(seconds) зупиняє виконання програми на вказану кількість секунд
+"""
+# import time
+#
+# print("Програма зупинена")
+# time.sleep(5)
+# print("Програма відповідає")
+
+"""
+Метод time.ctime([seconds]) перетворює часову мітку (кількість секунд) у зрозуміле для людини текстове представлення
+"""
+# import time
+#
+# current_time = time.time()
+# print(f"Поточний час: {current_time}")
+#
+# readable_time = time.ctime(current_time)
+# print(f"Читабельний час: {readable_time}")
+
+"""
+Метод time.localtime([seconds]) перетворює часову мітку в структуру struct_time у місцевій часовій зоні.
+"""
+# import time
+#
+# current_time = time.time()
+# print(f"Текущий час: {current_time}")
+#
+# local_time = time.localtime(current_time)
+# print(f"Час в місцевій часовій зоні: {local_time}")
+
+"""
+Давайте використаємо time.perf_counter() для вимірювання часу виконання деякого блоку коду:
+"""
+# import time
+#
+# start_time = time.perf_counter()
+#
+# for _ in range(1_000_000):
+#     pass
+#
+# end_time = time.perf_counter()
+#
+# execution_time = end_time - start_time
+# print(f"Виконання блоку зі сроком {execution_time:.2f} секунд.")
+
