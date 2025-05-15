@@ -4,6 +4,8 @@
 """
 from multiprocessing.context import set_spawning_popen
 
+import population
+
 # import datetime
 # now = datetime.datetime.now()
 # print(now)
@@ -370,3 +372,143 @@ datetime передує, наступає або є точно таким сам
 # execution_time = end_time - start_time
 # print(f"Виконання блоку зі сроком {execution_time:.2f} секунд.")
 
+"""
+Це метод, наприклад, підходить для симуляції кидка кубика:
+"""
+# import random
+#
+# dice_roll = random.randint(1, 6)
+# print(f"Розбір кубика: {dice_roll}")
+
+"""
+Метод random.random() потрібен, щоб отримати випадкове число в інтервалі 0, 1. 
+Він генерує випадкове дійсне число між 0.0 (включно) та 1.0 (не включно):
+"""
+# import random
+#
+# num = random.random()
+# print(num)
+
+"""
+Припустимо, вам потрібно симулювати випадкове відсоткове заповнення. 
+Можна використовувати random.random() для цього:
+"""
+# import random
+#
+# fill_percent = random.random() * 100
+# print(f"Заповнення відсоткового заповнення: {fill_percent:.2f}%")
+
+"""
+симуляція пострілу по мішені, але необхідно вибрати випадковий номер від 1 до 10, та лише непарні числа:
+"""
+
+# import random
+#
+# target = random.randrange(1, 11, 2)
+# print(f"Ціле число: {target}")
+
+"""
+Перемішування колоди карт:
+"""
+# import random
+#
+# cards = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K", "A"]
+#
+# random.shuffle(cards)
+#
+# print(f"Перемішана колода: {cards}")
+
+"""
+Вибір випадкового фрукта:
+"""
+# import random
+#
+# fruits = ["apple", "banana", "cherry", "date", "elderberry", "fig", "grape", "honeydew", "jackfruit", "kiwi", "lemon",
+#           "mango", "melon", "orange", "papaya", "peach", "pineapple", "plum", "quince", "strawberry", "watermelon"]
+# print(random.choice(fruits))
+
+"""
+Простий вибір випадкового елемента зі списку:
+"""
+# import random
+#
+# items = ['яблуко', 'банан', 'вишня', 'диня', 'груша', 'манга']
+# chosen_item = random.choices(items, k=1)
+# print(chosen_item)
+
+"""
+Вибір декількох елементів з можливістю повторень:
+"""
+# import random
+#
+# numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+# chosen_numbers = random.choices(numbers, k=3)
+# print(chosen_numbers)
+
+"""
+Вибір з вагами:
+"""
+
+# import random
+#
+# colors = ["red", "green", "blue", "yellow", "orange", "purple"]
+# weights = [10, 20, 30, 40, 50, 60]
+# chosen_color = random.choices(colors, weights, k=1)
+#
+# print(chosen_color)
+
+"""
+Створення випадкової команди з 4 учасників з групи з 10 осіб:
+"""
+# import random
+#
+# participants = ['Анна', 'Богдан', 'Віктор', 'Галина', 'Дмитро', 'Олена', 'Женя', 'Зорян', 'Ігор', 'Йосип']
+# team = random.sample(participants, 4)
+# print(f"Команда: {team}")
+
+"""
+Приклад генерації випадкової ціни для продукту в межах від 50 до 100:
+"""
+# import random
+# price = random.randint(50, 100)
+# print(f"Ціна продукту: {price}")
+
+"""
+Використання різних методів округлення
+"""
+# import math
+#
+# x = 3.7
+#
+# ceil_result = math.ceil(x)
+# floor_result = math.floor(x)
+# trunc_result = math.trunc(x)
+# print(ceil_result, floor_result, trunc_result)
+
+"""
+Приклад використання пакета math
+"""
+# import math
+#
+# print(math.pi)
+#
+# angle = math.radians(60)
+# print(math.sin(angle))
+#
+# print(math.sqrt(9))
+#
+# print(math.log(10, 2))
+
+"""
+Функція math.isclose використовується для порівняння двох чисел з певною допустимою похибкою.
+"""
+
+# import math
+#
+# r = math.isclose(0.1 + 0.2, 0.3)
+# print(r)
+
+# import math
+#
+# r = math.isclose(0.1, 0.10000000000000009)
+# print(r)
