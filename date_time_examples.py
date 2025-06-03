@@ -512,3 +512,120 @@ datetime передує, наступає або є точно таким сам
 #
 # r = math.isclose(0.1, 0.10000000000000009)
 # print(r)
+
+# from datetime import datetime, date
+#
+# def string_to_date(date_string: str) -> date:
+#     return datetime.strptime(date_string, "%Y.%m.%d").date()
+#
+# def date_to_string(date_obj: date) -> str:
+#     return date_obj.strftime("%Y.%m.%d")
+
+# def greet(b, a):
+#     return a + b
+#
+# result = greet(3 ,5)
+# print(result)
+
+"""Найти ближайший вторник"""
+# from datetime import date, timedelta
+#
+# def next_weekday(d: date, weekday: int) -> date:
+#     days_ahead = (weekday - d.weekday() + 7) % 7
+#     return d + timedelta(days=days_ahead or 7)
+#
+# today = date.today()
+# next_tuesday = next_weekday(today, 1)  # 1 = Вторник
+# print(next_tuesday)
+
+"""Все субботы в месяце"""
+# from datetime import date, timedelta
+#
+# def saturdays_in_month(year: int, month: int):
+#     d = date(year, month, 1)
+#     saturdays = []
+#     while d.month == month:
+#         if d.weekday() == 5:  # 5 = Суббота
+#             saturdays.append(d)
+#         d += timedelta(days=1)
+#     return saturdays
+#
+# print(saturdays_in_month(2025, 6))
+
+
+# from datetime import date, timedelta
+# from typing import List
+#
+# def find_weekdays_between(start_date: date, end_date: date, target_weekday: int) -> List[date]:
+#     """
+#     Возвращает все даты с заданным днем недели между start_date и end_date (включительно).
+#
+#     :param start_date: начальная дата
+#     :param end_date: конечная дата
+#     :param target_weekday: целевой день недели (0=Пн, 6=Вс)
+#     :return: список дат
+#     """
+#     if start_date > end_date:
+#         raise ValueError("start_date must be before or equal to end_date")
+#
+#     # Найти первую дату с нужным днем недели
+#     days_ahead = (target_weekday - start_date.weekday() + 7) % 7
+#     first_date = start_date + timedelta(days=days_ahead)
+#
+#     dates = []
+#     current = first_date
+#     while current <= end_date:
+#         dates.append(current)
+#         current += timedelta(days=7)
+#
+#     return dates
+#
+# # Пример использования
+# if __name__ == "__main__":
+#     start = date(2025, 6, 1)
+#     end = date(2025, 6, 30)
+#     weekday = 3  # Четверг
+#
+#     thursdays = find_weekdays_between(start, end, weekday)
+#     for d in thursdays:
+#         print(d)
+
+# from datetime import datetime, timedelta
+#
+#
+# def string_to_date(date_string):
+#     return datetime.strptime(date_string, "%Y.%m.%d").date()
+#
+#
+# def find_next_weekday(start_date, weekday: int):
+#     current_weekday = start_date.weekday()
+#     days_ahead = (weekday - current_weekday + 7) % 7
+#     days_ahead = 7 if days_ahead == 0 else days_ahead
+#     return start_date + timedelta(days=days_ahead)
+# #print(find_next_weekday(date(2020, 1, 1), 0))
+
+# from datetime import datetime, date
+#
+# def string_to_date(date_str: str) -> date:
+#     return datetime.strptime(date_str, "%Y.%m.%d").date()
+#
+# def prepare_user_list(users: list[dict[str, str]]) -> list[dict[str, date]]:
+#     result = []
+#     for user in users:
+#         name = user["name"]
+#         birthday_str = user["birthday"]
+#         birthday_date = string_to_date(birthday_str)
+#         result.append({"name": name, "birthday": birthday_date})
+#     return result
+#
+# # Example usage
+# users = [
+#     {"name": "Bill Gates", "birthday": "1955.3.25"},
+#     {"name": "Steve Jobs", "birthday": "1955.3.21"},
+#     {"name": "Jinny Lee", "birthday": "1956.3.22"},
+#     {"name": "John Doe", "birthday": "1985.01.23"},
+#     {"name": "Jane Smith", "birthday": "1990.01.27"}
+# ]
+#
+# prepared_users = prepare_user_list(users)
+# print(prepared_users)
